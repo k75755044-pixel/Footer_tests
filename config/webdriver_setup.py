@@ -4,11 +4,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 class WebDriverConfig:
-    """Конфигурация WebDriver"""
 
     @staticmethod
     def setup_driver():
-        """Настройка и запуск WebDriver"""
         service = Service(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service)
         driver.maximize_window()
@@ -16,6 +14,5 @@ class WebDriverConfig:
 
     @staticmethod
     def teardown_driver(driver):
-        """Завершение работы WebDriver"""
         if driver:
             driver.quit()
